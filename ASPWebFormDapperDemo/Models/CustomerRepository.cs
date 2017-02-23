@@ -24,7 +24,7 @@ namespace ASPWebFormDapperDemo.Models
 
         public Customer FindById(int Id)
         {
-            return this._db.Query("SELECT * FROM Customer WHERE CustomerID=@Id", new { Id = Id }).FirstOrDefault();
+            return this._db.Query<Customer>("SELECT * FROM Customer WHERE CustomerID=@Id", new { Id = Id }).FirstOrDefault();
         }
 
         public bool AddCustomer(Customer customer)
